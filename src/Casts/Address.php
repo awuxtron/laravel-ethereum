@@ -35,6 +35,6 @@ class Address implements CastsAttributes
      */
     public function set($model, string $key, $value, array $attributes): string
     {
-        return AddressType::from($value)->encoded()->prefixed();
+        return AddressType::from($value)->value();
     }
 }
