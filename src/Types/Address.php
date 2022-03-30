@@ -71,29 +71,6 @@ class Address extends EthType
     }
 
     /**
-     * Determine if the validation rule passes.
-     *
-     * @param string $attribute
-     * @param mixed  $value
-     *
-     * @return bool
-     */
-    public function passes($attribute, $value): bool
-    {
-        return AddressUtil::isValid($value);
-    }
-
-    /**
-     * Get the validation error message.
-     *
-     * @return string
-     */
-    public function message(): string
-    {
-        return 'The :attribute must be a valid Ethereum address.';
-    }
-
-    /**
      * Encode the given value to hex object.
      *
      * @return Hex

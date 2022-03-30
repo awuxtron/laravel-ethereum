@@ -4,13 +4,10 @@ namespace Awuxtron\LaravelEthereum\Types;
 
 use Awuxtron\LaravelEthereum\Exceptions\InvalidByteSizeException;
 use Awuxtron\LaravelEthereum\Utils\Hex;
-use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
-use Illuminate\Contracts\Validation\Rule;
-use Illuminate\Database\Eloquent\Model;
 use InvalidArgumentException;
 use JsonSerializable;
 
-abstract class EthType implements JsonSerializable, CastsAttributes, Rule
+abstract class EthType implements JsonSerializable
 {
     /**
      * The regex pattern for matching a solidity type.
@@ -203,36 +200,6 @@ abstract class EthType implements JsonSerializable, CastsAttributes, Rule
     }
 
     abstract public function value(): mixed;
-
-    /**
-     * Transform the attribute from the underlying model values.
-     *
-     * @param Model                $model
-     * @param string               $key
-     * @param mixed                $value
-     * @param array<string, mixed> $attributes
-     *
-     * @return static
-     */
-    public function get($model, string $key, $value, array $attributes): static
-    {
-        return new static($value);
-    }
-
-    /**
-     * Transform the attribute to its underlying model values.
-     *
-     * @param Model                $model
-     * @param string               $key
-     * @param mixed                $value
-     * @param array<string, mixed> $attributes
-     *
-     * @return static
-     */
-    public function set($model, string $key, $value, array $attributes): static
-    {
-        return static::from($value);
-    }
 
     /**
      * Encode the given value to hex object.
