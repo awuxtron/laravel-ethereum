@@ -1,0 +1,66 @@
+{
+    "name": "awuxtron/laravel-ethereum",
+    "description": "The Ethereum Web3 Client For Laravel.",
+    "homepage": "https://github.com/awuxtron/laravel-ethereum",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "web3",
+        "ethereum",
+        "blockchain",
+        "json-rpc",
+        "cryptocurrency",
+        "laravel-ethereum",
+        "laravel-web3"
+    ],
+    "authors": [
+        {
+            "name": "Awuxtron",
+            "email": "awuxtron@gmail.com",
+            "role": "Developer",
+            "homepage": "https://awuxtron.me"
+        }
+    ],
+    "scripts": {
+        "analyse": "vendor/bin/phpstan analyse",
+        "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes",
+        "test": "vendor/bin/pest"
+    },
+    "autoload": {
+        "psr-4": {
+            "Awuxtron\\LaravelEthereum\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Awuxtron\\LaravelEthereum\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^8.0",
+        "ext-bcmath": "*",
+        "kornrunner/keccak": "^1.1",
+        "illuminate/support": "^9.0",
+        "illuminate/contracts": "^9.0",
+        "illuminate/database": "^9.0",
+        "brick/math": "^0.9.3",
+        "simplito/elliptic-php": "^1.0"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^1.4",
+        "nunomaduro/larastan": "^2.1",
+        "orchestra/testbench": "^7.1",
+        "pestphp/pest": "^1.21",
+        "friendsofphp/php-cs-fixer": "^3.8"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
